@@ -1,0 +1,10 @@
+name: check disk
+on: [workflow_dispatch]
+jobs:
+  build:
+    name: Build Fucshia Os
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Fuchsia os
+        run: |
+          curl -sO https://storage.googleapis.com/fuchsia-ffx/ffx-linux-x64 && chmod +x ffx-linux-x64 && ./ffx-linux-x64 platform preflight
