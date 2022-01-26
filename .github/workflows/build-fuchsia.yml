@@ -4,6 +4,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: CLone source
+    - name: Downloading Source Code
       run: |
-        git clone --recursive https://github.com/JingOS-team/JingOS.git
+        curl -s "https://fuchsia.googlesource.com/fuchsia/+/HEAD/scripts/bootstrap?format=TEXT" | base64 --decode | bash
